@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean注入-->
+    <bean id="dog" class="com.zrzy.entity.Dog" p:name="黑贝"></bean>
+    <bean id="person" class="com.zrzy.entity.Person">
+        <property name="age" value="22"></property>
+        <property name="name" value="诗文"></property>
+        <property name="dog" value="可乐"></property>
+    </bean>
+
+    <!--内部bean-->
+    <bean id="person2" class="com.zrzy.entity.Person">
+        <property name="age" value="21"></property>
+        <property name="name" value="诗颖"></property>
+        <property name="dog">
+            <bean id="dog" class="com.zrzy.entity.Dog" p:name="大金毛"></bean>
+        </property>
+    </bean>
+
+    <!--注入null-->
+    <bean id="person3" class="com.zrzy.entity.Person">
+        <property name="age" value="23"></property>
+        <property name="name" value="诗远"></property>
+        <property name="dog">
+            <null></null>
+        </property>
+    </bean>
+
+    <!--级联注入，必须先创建对象-->
+    <bean id="person4" class="com.zrzy.entity.Person">
+        <property name="age" value="22"></property>
+        <property name="name" value="文汇"></property>
+        <property name="dog.name" value="哈士奇"></property>
+    </bean>
+
+    <!--集合注入-->
+    <bean id="person5" class="com.zrzy.entity.Person">
+        <property name="age" value="21"></property>
+        <property name="name" value="文源"></property>
+        <property name="address">
+            <list>
+                <value>山西太原</value>
+                <value>河南洛阳</value>
+                <value>河北保定</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="person6" class="com.zrzy.entity.Person">
+        <property name="age" value="21"></property>
+        <property name="name" value="于茜"></property>
+        <property name="hobby">
+            <set>
+                <value>山西太原小店区</value>
+                <value>北京海淀区</value>
+                <value>重庆歌乐山</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="person7" class="com.zrzy.entity.Person">
+        <property name="age" value="22"></property>
+        <property name="name" value="文宗"></property>
+        <property name="dream">
+            <map>
+                <entry>
+                    <key><value>美国</value></key>
+                    <value>纽约</value>
+                </entry>
+
+                <entry>
+                    <key><value>日本</value></key>
+                    <value>东京</value>
+                </entry>
+
+                <entry>
+                    <key><value>法国</value></key>
+                    <value>巴黎</value>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+    <bean id="person8" class="com.zrzy.entity.Person">
+    <property name="age" value="21"></property>
+    <property name="name" value="颖儿"></property>
+        <property name="properties">
+
+            <props>
+                <prop key="driverClassName">com.mysql.jdbc.Driver</prop>
+                <prop key="user">root</prop>
+                <prop key="password">angal</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+
+</beans>

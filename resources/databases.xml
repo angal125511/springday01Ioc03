@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byType"
+>
+
+    <!--  <bean id="userService" class="com.serivce.UserService">
+          <property name="userDao" ref="userDao"  ></property>
+      </bean>
+      <bean id="userDao" class="com.dao.UserDao"></bean>-->
+    <!--   <bean id="userService1" class="com.serivce.UserService">
+       </bean>
+       <bean id="userDao" class="com.dao.UserDao"></bean>-->
+    <bean id="userService2" class="com.zrzy.service.UserService">
+    </bean>
+    <bean id="userDao111" class="com.zrzy.dao.UserDao"></bean>
+
+</beans>
